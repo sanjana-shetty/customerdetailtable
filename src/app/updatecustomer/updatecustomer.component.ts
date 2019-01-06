@@ -1,4 +1,6 @@
-import { Component, OnInit ,Input} from '@angular/core';
+import { Component, OnInit ,Input, Output} from '@angular/core';
+import {CustomerserviceService} from '../customerservice.service';
+
 
 @Component({
   selector: 'app-updatecustomer',
@@ -6,21 +8,28 @@ import { Component, OnInit ,Input} from '@angular/core';
   styleUrls: ['./updatecustomer.component.css']
 })
 export class UpdatecustomerComponent implements OnInit {
-@Input() show:string;
+@Input() show:boolean;
 @Input() id:number;
 @Input() name:string;
 @Input() newAge:number;
 @Input() newNo:number;
 
 
-  constructor() { }
+
+  constructor(private custservice:CustomerserviceService) { }
 
   ngOnInit() {
   }
 
 
   updateCust(id:any,Age:any,No: any){
-  
-    console.log(id,Age,No)
+    for(var i=0;i<this.custservice.Customer.length;i++){
+      if(this.custservice.Customer[i].customerId==id){
+        this.custservice.Customer[i].customerAge= Age;
+        this.custservice.Customer[i].customeMobileNumber=No;
+      }
+    }
+     this.show=false;
+     alert("Updated successfully")
   }
 }

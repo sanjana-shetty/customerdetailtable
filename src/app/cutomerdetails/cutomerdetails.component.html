@@ -9,7 +9,7 @@
         <th>Action</th>
     </tr>
   </thead>
-  <tbody *ngIf="customers">
+  <tbody *ngIf="customers"> 
     <tr *ngFor="let cust of customers">
       <td>{{cust.customerId}}</td>
       <td>{{cust.customerName}}</td>
@@ -21,4 +21,4 @@
 </table>
 
 
-<app-updatecustomer [show]='show' [id]='id' [newAge]='newAge' [newNo]='newNo' [name]='name' ></app-updatecustomer>
+<app-updatecustomer [show]='show' [id]='id' [newAge]='newAge' [newNo]='newNo' [name]='name'></app-updatecustomer>
