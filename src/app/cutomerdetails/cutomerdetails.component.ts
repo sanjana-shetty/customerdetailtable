@@ -34,9 +34,6 @@ export class CutomerdetailsComponent implements OnInit {
      this.newNo=selectedItem.customeMobileNumber
 
   }
-  updateCust(id:any,Age:any,No: any){
-  
-    console.log(id,Age,No)
-  }
+
 
 }

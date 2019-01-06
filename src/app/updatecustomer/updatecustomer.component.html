@@ -2,15 +2,15 @@
   <div  id="details" >
     <h1>Customer Details</h1>
       <form>
-          Customer Id:  <input type="text" value={{id}} disabled>
+          Customer Id:  <input type="text" name="id" [(ngModel)]="id" disabled>
           <br><br>  
           Customer Name:  <input type="text" value={{name}} disabled>
           <br><br> 
-          Customer Age:  <input type="text" name="age"  [(ngModel)]="newAge">
+          Customer Age:  <input  type="text" name="age"  [(ngModel)]="newAge">
           <br><br> 
-          Customer Mobile Number:  <input type="text" name="numb" [(ngModel)]="newNo">
+          Customer Mobile Number:  <input  type="text" name="numb" [(ngModel)]="newNo">
           <br><br> 
-          <input type="button"  value="Update" >
+          <input type="button" (click)="updateCust(id,newAge,newNo)"   value="Update" >
       </form>
   </div>
   </ng-container>
